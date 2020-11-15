@@ -1,0 +1,10 @@
+Package: page.juliette.Playr 
+Name: Playr 
+Depends: mobilesubstrate,  ws.hbang.common (>= 1.11)
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: Music player customization.
+Maintainer: Juliette <hi@juliette.page>
+Author: Juliette <hi@juliette.page>
+Section: Tweaks
+Installed-Size: 344

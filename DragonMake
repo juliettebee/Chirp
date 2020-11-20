@@ -2,13 +2,6 @@
 name: CCMusicSlider
 icmd: sbreload
 
-
-CCMusicSliderTweak:
-    type: tweak
-    
-    logos_files:
-        - "Tweak/*.x"
-
 all:
   targetvers: 13.0
   frameworks: ['CoreFoundation', 'Foundation', 'UIKit', 'CoreGraphics', 'QuartzCore', 'CoreImage', 'AudioToolbox', 'Cephei']
@@ -16,3 +9,13 @@ all:
     - arm64
     - arm64e
 
+CCMusicSliderTweak:
+    type: tweak
+    logos_files:
+        - "Tweak/*.x"
+
+CCMusicSliderPrefs:
+    dir: Prefs
+    type: prefs
+    objc_files:
+        - "*.m"

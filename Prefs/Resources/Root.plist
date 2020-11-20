@@ -10,6 +10,10 @@
 			<key>label</key>
 			<string>Settings</string>
 		</dict>
+        <dict>
+            <key>cellClass</key>
+            <string>JulietteCCPreview</string>
+        </dict>
 	</array>
 	<key>title</key>
 	<string>JulietteCCSettings</string>

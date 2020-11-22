@@ -13,6 +13,8 @@ CCMusicSliderTweak:
     type: tweak
     logos_files:
         - "Tweak/*.x"
+    objc_files:
+        - "Tweak/*.m"
 
 CCMusicSliderPrefs:
     dir: Prefs

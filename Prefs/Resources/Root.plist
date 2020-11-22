@@ -13,6 +13,9 @@
         <dict>
             <key>cellClass</key>
             <string>JulietteCCPreview</string>
+                <!-- Setting height like this as the other way isnt working :ponsive: -->
+            <key>height</key>
+            <string>100</string>
         </dict>
 	</array>
 	<key>title</key>

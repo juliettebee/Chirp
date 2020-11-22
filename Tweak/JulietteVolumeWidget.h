@@ -2,6 +2,8 @@
 #import <MediaPlayer/MediaPlayer.h>
 #import <AVKit/AVKit.h>
 
-@implementation JulietteVolumeWidget : UIView
-
+@interface JulietteVolumeWidget : UIView
+@property (nonatomic, retain) UIImageView *albumArt;
+-(void)nextSong:(UISwipeGestureRecognizer*) gesture;
+-(void)prevSong:(UISwipeGestureRecognizer*) gesture;
 @end

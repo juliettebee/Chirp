@@ -50,6 +50,6 @@
 // Dedicated function to update artwork 
 -(void)updateArtwork {
     MPMediaItemArtwork *art = MPMusicPlayerController.systemMusicPlayer.nowPlayingItem.artwork;
-    [self.albumArt setImage:[art imageWithSize:CGSizeMake(100,100)]];
+    [self.albumArt setImage:[art imageWithSize:self.frame.size]];
 }
 @end

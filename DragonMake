@@ -14,10 +14,11 @@ CCMusicSliderTweak:
     logos_files:
         - "Tweak/*.x"
     objc_files:
-        - "Tweak/*.m"
+        - "Widget/*.m"
 
 CCMusicSliderPrefs:
     dir: Prefs
     type: prefs
     objc_files:
         - "*.m"
+        - "../Widget/*.m"

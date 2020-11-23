@@ -1,6 +1,6 @@
 #import <UIKit/UIKit.h>
 #import <MediaPlayer/MediaPlayer.h>
-#import "Tweak/JulietteVolumeWidget.h"
+#import "../Widget/Widget.h"
 
 @interface SBElasticVolumeViewController : UIViewController 
 @end

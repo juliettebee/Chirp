@@ -5,20 +5,65 @@
 	<key>items</key>
 	<array>
 		<dict>
-			<key>cell</key>
-			<string>PSGroupCell</string>
-			<key>label</key>
-			<string>Settings</string>
+			<key>cellClass</key>
+			<string>JulietteCCPreview</string>
+			<key>height</key>
+			<string>100</string>
 		</dict>
         <dict>
-            <key>cellClass</key>
-            <string>JulietteCCPreview</string>
-                <!-- Setting height like this as the other way isnt working :ponsive: -->
-            <key>height</key>
-            <string>100</string>
+            <key>cell</key>
+            <string>PSGroupCell</string>
+            <key>label</key>
+            <string>Size</string>
+        </dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSliderCell</string>
+			<key>min</key>
+			<real>100</real>
+			<key>max</key>
+			<real>1000</real>
+            <key>isSegmented</key>
+            <true/> 
+			<key>segmentCount</key>
+			<integer>20</integer>
+            <key>key</key>
+            <string>JulietteWidgetSize</string>
+            <key>default</key>
+            <integer>100</integer>
+		</dict>
+        <dict>
+            <key>cell</key>
+            <string>PSGroupCell</string>
+            <key>label</key>
+            <string>Location</string>
+        </dict>
+        <dict>
+            <key>cell</key>
+            <string>PSEditTextCell</string>
+            <key>placeholder</key>
+            <string>x</string>
+        </dict>
+<dict>
+            <key>cell</key>
+            <string>PSEditTextCell</string>
+            <key>placeholder</key>
+            <string>x</string>
+        </dict>
+        <dict>
+            <key>cell</key>
+            <string>PSGroupCell</string>
+            <key>label</key>
+            <string>Tweak a work in progress, dev build</string>
+        </dict>
+        <dict>
+            <key>cell</key>
+            <string>PSGroupCell</string>
+            <key>label</key>
+            <string>Made with ❤️ by Juliette</string>
         </dict>
 	</array>
 	<key>title</key>
-	<string>JulietteCCSettings</string>
+	<string>Volume</string>
 </dict>
 </plist>

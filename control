@@ -1,5 +1,5 @@
-Package: page.juliette.Playr 
-Name: Playr 
+Package: page.juliette.Music 
+Name: Music 
 Depends: mobilesubstrate,  ws.hbang.common (>= 1.11)
 Version: 0.0.1
 Architecture: iphoneos-arm

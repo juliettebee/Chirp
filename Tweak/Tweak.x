@@ -7,10 +7,13 @@
         preferences = [[HBPreferences alloc] initWithIdentifier:@"page.juliette.CCMusicSliderPrefs"];
         // Getting size
         [preferences registerInteger:&size default:100 forKey:@"JulietteWidgetSize"];
-        // Getting x center
-        int xCenter = self.view.frame.origin.x;
+        // Getting position
+        int xAxis;
+        int yAxis;
+        [preferences registerInteger:&xAxis default:self.view.frame.origin.x forKey:@"JulietteWidgetLocationX"];
+        [preferences registerInteger:&yAxis default:0 forKey:@"JulietteWidgetLocationY"];
         // Creating widget
-        widget = [[JulietteVolumeWidget alloc] initWithFrame:CGRectMake(xCenter, 0, (CGFloat)size, (CGFloat)size)];
+        widget = [[JulietteVolumeWidget alloc] initWithFrame:CGRectMake(xAxis, yAxis, (CGFloat)size, (CGFloat)size)];
         // Adding widget
         [[self view] addSubview:widget];
    }

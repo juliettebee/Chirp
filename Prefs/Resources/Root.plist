@@ -42,13 +42,17 @@
             <key>cell</key>
             <string>PSEditTextCell</string>
             <key>placeholder</key>
-            <string>x</string>
+            <string>X</string>
+            <key>key</key>
+            <string>JulietteWidgetLocationX</string>
         </dict>
-<dict>
+        <dict>
             <key>cell</key>
             <string>PSEditTextCell</string>
             <key>placeholder</key>
-            <string>x</string>
+            <string>Y</string>
+            <key>key</key>
+            <string>JulietteWidgetLocationY</string>
         </dict>
         <dict>
             <key>cell</key>

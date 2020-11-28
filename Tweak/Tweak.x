@@ -1,11 +1,10 @@
 #import "Tweak/Tweak.h"
 
+%group CCMusic 
 %hook SBElasticVolumeViewController // Volume slider 
     -(void)viewDidLoad {
         %orig;
-        // Getting prefs
-        preferences = [[HBPreferences alloc] initWithIdentifier:@"page.juliette.CCMusicSliderPrefs"];
-        // Getting size
+       // Getting size
         [preferences registerInteger:&size default:100 forKey:@"JulietteWidgetSize"];
         // Getting position
         int xAxis;
@@ -18,3 +17,14 @@
         [[self view] addSubview:widget];
    }
 %end
+%end
+%ctor {
+        // Getting prefs
+        preferences = [[HBPreferences alloc] initWithIdentifier:@"page.juliette.CCMusicSliderPrefs"];
+        // Registering enabled bool
+        BOOL enabled;
+        [preferences registerBool:&enabled default:YES forKey:@"JulietteWidgetEnabled"];
+        if (enabled) {
+            %init(CCMusic); 
+        }
+}

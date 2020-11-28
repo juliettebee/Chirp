@@ -11,6 +11,18 @@
 			<string>100</string>
 		</dict>
         <dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>page.juliette.CCMusicSliderPrefs</string>
+			<key>key</key>
+            <string>JulietteWidgetEnabled</string>
+			<key>label</key>
+			<string>Enabled</string>
+		</dict>
+        <dict>
             <key>cell</key>
             <string>PSGroupCell</string>
             <key>label</key>
@@ -31,6 +43,8 @@
             <string>JulietteWidgetSize</string>
             <key>showValue</key>
             <true/>
+            <key>defaults</key>
+			<string>page.juliette.CCMusicSliderPrefs</string>
 		</dict>
         <dict>
             <key>cell</key>
@@ -45,6 +59,8 @@
             <string>X</string>
             <key>key</key>
             <string>JulietteWidgetLocationX</string>
+             <key>defaults</key>
+			<string>page.juliette.CCMusicSliderPrefs</string>
         </dict>
         <dict>
             <key>cell</key>
@@ -53,6 +69,8 @@
             <string>Y</string>
             <key>key</key>
             <string>JulietteWidgetLocationY</string>
+            <key>defaults</key>
+			<string>page.juliette.CCMusicSliderPrefs</string>
         </dict>
         <dict>
             <key>cell</key>

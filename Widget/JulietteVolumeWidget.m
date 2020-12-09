@@ -20,6 +20,14 @@
         UISwipeGestureRecognizer *nextSong = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(nextSong:)]; // Creating with the target of self and the action of next song, that method gets called when the swipe is made.
         [nextSong setDirection:(UISwipeGestureRecognizerDirectionRight)]; // Setting direction of the swipe
         [self addGestureRecognizer:nextSong]; // Adding the gesture to the widget
+        // Adding pause gesture
+        UISwipeGestureRecognizer *pauseSong = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(pauseSong:)];
+        [pauseSong setDirection:(UISwipeGestureRecognizerDirectionUp)];
+        [self addGestureRecognizer:pauseSong];
+        // Adding play gesture
+        UISwipeGestureRecognizer *playSong = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(playSong:)];
+        [playSong setDirection:(UISwipeGestureRecognizerDirectionDown)];
+        [self addGestureRecognizer:playSong];
         // Adding previous song gesture
         UISwipeGestureRecognizer *prevSong = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(prevSong:)];
         [prevSong setDirection:(UISwipeGestureRecognizerDirectionLeft)];
@@ -43,6 +51,12 @@
 -(void)prevSong:(UISwipeGestureRecognizer*) gesture {
     [MPMusicPlayerController.systemMusicPlayer skipToPreviousItem];
     [self updateArtwork];
+}
+-(void)pauseSong:(UISwipeGestureRecognizer*) gesture {
+    [MPMusicPlayerController.systemMusicPlayer stop];
+}
+-(void)playSong:(UISwipeGestureRecognizer*) gesture {
+    [MPMusicPlayerController.systemMusicPlayer play];
 }
 - (void) songChangeNotification:(NSNotification *) notification {
     [self updateArtwork];

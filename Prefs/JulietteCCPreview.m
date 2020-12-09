@@ -1,5 +1,4 @@
 #import "JulietteCCPreview.h"
-#import <MediaPlayer/MediaPlayer.h>
 
 @implementation JulietteCCPreview
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier specifier:(PSSpecifier *)specifier {

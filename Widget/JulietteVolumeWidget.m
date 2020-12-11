@@ -13,8 +13,7 @@
         // Setting UIView's size
         // Also here but with different vars
         [self.albumArt setFrame:frame];
-        //Rounding corners
-        [[self layer] setCornerRadius:10];
+        // This is needed for radius
         self.layer.masksToBounds = TRUE;
         // Getting prefs
         [self getPreferences];
@@ -54,16 +53,13 @@
 // Function to get prefs
 -(void)getPreferences {
     preferences = [[HBPreferences alloc] initWithIdentifier:@"page.juliette.CCMusicSliderPrefs"];
-
-    // Creation and registration of variables
-    NSInteger *up;
+    
+    // Registration
     [preferences registerInteger:&up default:1 forKey:@"actionUp"];
-    NSInteger *down;
     [preferences registerInteger:&down default:0 forKey:@"actionDown"];
-    NSInteger *left;
     [preferences registerInteger:&left default:3 forKey:@"actionLeft"];
-    NSInteger *right;
     [preferences registerInteger:&right default:4 forKey:@"actionRight"];
+    [preferences registerDouble:&radius default:10 forKey:@"JulietteWidgetRadius"];
     // Setting gestures
     UISwipeGestureRecognizer *upGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:[self getAction:up]];
     UISwipeGestureRecognizer *downGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:[self getAction:down]];
@@ -79,6 +75,8 @@
     [self addGestureRecognizer:downGesture];
     [self addGestureRecognizer:leftGesture];
     [self addGestureRecognizer:rightGesture];
+    //Rounding corners
+    [[self layer] setCornerRadius:radius];
 
 }
 -(SEL)getAction:(NSInteger*)key {

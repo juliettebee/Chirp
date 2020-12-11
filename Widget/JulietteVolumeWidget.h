@@ -4,6 +4,11 @@
 
 @interface JulietteVolumeWidget : UIView {
     HBPreferences *preferences;
+    NSInteger *up;
+    NSInteger *down;
+    NSInteger *left;
+    NSInteger *right;
+    double radius;
 }
 @property (nonatomic, retain) UIImageView *albumArt;
 -(void)nextSong:(UISwipeGestureRecognizer*) gesture; 

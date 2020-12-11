@@ -16,10 +16,10 @@
              <string>PSSegmentCell</string>
              <key>validValues</key>
              <array>
-                 <string>Play</string>
-                 <string>Pause</string>
-                 <string>Next</string>
-                 <string>Previous</string>
+                 <string>0</string>
+                 <string>1</string>
+                 <string>2</string>
+                 <string>3</string>
              </array>
              <key>validTitles</key>
              <array>
@@ -33,7 +33,7 @@
              <key>key</key>
              <string>actionUp</string>
              <key>default</key>
-             <string>Pause</string>
+             <string>1</string>
         </dict>
         <dict>
             <key>cell</key>
@@ -46,10 +46,10 @@
              <string>PSSegmentCell</string>
              <key>validValues</key>
              <array>
-                 <string>Play</string>
-                 <string>Pause</string>
-                 <string>Next</string>
-                 <string>Previous</string>
+                 <string>0</string>
+                 <string>1</string>
+                 <string>2</string>
+                 <string>3</string>
              </array>
              <key>validTitles</key>
              <array>
@@ -63,7 +63,7 @@
              <key>key</key>
              <string>actionDown</string>
              <key>default</key>
-             <string>Play</string>
+             <string>0</string>
         </dict>
         <dict>
             <key>cell</key>
@@ -76,10 +76,10 @@
              <string>PSSegmentCell</string>
              <key>validValues</key>
              <array>
-                 <string>Play</string>
-                 <string>Pause</string>
-                 <string>Next</string>
-                 <string>Previous</string>
+                 <string>0</string>
+                 <string>1</string>
+                 <string>2</string>
+                 <string>3</string>
              </array>
              <key>validTitles</key>
              <array>
@@ -106,10 +106,10 @@
              <string>PSSegmentCell</string>
              <key>validValues</key>
              <array>
-                 <string>Play</string>
-                 <string>Pause</string>
-                 <string>Next</string>
-                 <string>Previous</string>
+                <string>0</string>
+                 <string>1</string>
+                 <string>2</string>
+                 <string>3</string>
              </array>
              <key>validTitles</key>
              <array>

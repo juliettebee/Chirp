@@ -20,6 +20,7 @@
                  <string>1</string>
                  <string>2</string>
                  <string>3</string>
+                 <string>4</string>
              </array>
              <key>validTitles</key>
              <array>
@@ -27,6 +28,7 @@
                  <string>Pause</string>
                  <string>Next</string>
                  <string>Previous</string>
+                 <string>Airplay</string>
              </array>
 	         <key>defaults</key>
 	         <string>page.juliette.CCMusicSliderPrefs</string>
@@ -50,6 +52,7 @@
                  <string>1</string>
                  <string>2</string>
                  <string>3</string>
+                 <string>4</string>
              </array>
              <key>validTitles</key>
              <array>
@@ -57,6 +60,7 @@
                  <string>Pause</string>
                  <string>Next</string>
                  <string>Previous</string>
+                 <string>Airplay</string>
              </array>
 	         <key>defaults</key>
 	         <string>page.juliette.CCMusicSliderPrefs</string>
@@ -80,6 +84,7 @@
                  <string>1</string>
                  <string>2</string>
                  <string>3</string>
+                 <string>4</string>
              </array>
              <key>validTitles</key>
              <array>
@@ -87,6 +92,7 @@
                  <string>Pause</string>
                  <string>Next</string>
                  <string>Previous</string>
+                 <string>Airplay</string>
              </array>
 	         <key>defaults</key>
 	         <string>page.juliette.CCMusicSliderPrefs</string>
@@ -110,6 +116,7 @@
                  <string>1</string>
                  <string>2</string>
                  <string>3</string>
+                 <string>4</string>
              </array>
              <key>validTitles</key>
              <array>
@@ -117,6 +124,7 @@
                  <string>Pause</string>
                  <string>Next</string>
                  <string>Previous</string>
+                 <string>Airplay</string>
              </array>
 	         <key>defaults</key>
 	         <string>page.juliette.CCMusicSliderPrefs</string>
@@ -125,6 +133,7 @@
              <key>default</key>
              <string>Next</string>
         </dict>
+        
 	</array>
 	<key>title</key>
 	<string>Volume</string>

@@ -1,6 +1,7 @@
 #import <UIKit/UIKit.h>
 #import <Cephei/HBPreferences.h>
 #import <MediaPlayer/MediaPlayer.h>
+#import <AVKit/AVKit.h>
 
 @interface JulietteVolumeWidget : UIView {
     HBPreferences *preferences;

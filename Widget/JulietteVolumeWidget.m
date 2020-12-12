@@ -42,6 +42,16 @@
 -(void)playSong:(UISwipeGestureRecognizer*) gesture {
     [MPMusicPlayerController.systemMusicPlayer play];
 }
+-(void)showAirplay:(UISwipeGestureRecognizer*) gesture {
+    // The picker only shows the logo :/
+    AVRoutePickerView *picker = [[AVRoutePickerView alloc] init];
+    // Hide it so no one sees it
+    [picker setHidden:YES];
+    // Lets get that button!
+    UIButton *coolHiddenButton = picker.subviews[0];
+    // Now lets tap it!
+    [coolHiddenButton sendActionsForControlEvents: UIControlEventTouchUpInside];
+}
 - (void)songChangeNotification:(NSNotification *) notification {
     [self updateArtwork];
 }
@@ -58,7 +68,7 @@
     [preferences registerInteger:&up default:1 forKey:@"actionUp"];
     [preferences registerInteger:&down default:0 forKey:@"actionDown"];
     [preferences registerInteger:&left default:3 forKey:@"actionLeft"];
-    [preferences registerInteger:&right default:4 forKey:@"actionRight"];
+    [preferences registerInteger:&right default:2 forKey:@"actionRight"];
     [preferences registerDouble:&radius default:10 forKey:@"JulietteWidgetRadius"];
     // Setting gestures
     UISwipeGestureRecognizer *upGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:[self getAction:up]];
@@ -92,6 +102,9 @@
             break;
         case 3:
             return @selector(prevSong:);
+            break;
+        case 4:
+            return @selector(showAirplay:);
             break;
         default:
             return @selector(playSong:);

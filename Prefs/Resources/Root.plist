@@ -106,12 +106,7 @@
             <key>label</key>
             <string>Tweak a work in progress, dev build</string>
         </dict>
-        <dict>
-            <key>cell</key>
-            <string>PSGroupCell</string>
-            <key>label</key>
-            <string>Made with ❤️ by Juliette</string>
-        </dict>
+
 	</array>
 	<key>title</key>
 	<string>Volume</string>

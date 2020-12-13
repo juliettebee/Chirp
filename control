@@ -1,5 +1,5 @@
-Package: page.juliette.Music 
-Name: Music 
+Package: page.juliette.Chirp 
+Name: Chirp 
 Depends: mobilesubstrate,  ws.hbang.common (>= 1.11)
 Version: 0.0.1
 Architecture: iphoneos-arm
@@ -7,3 +7,5 @@ Description: Music player customization.
 Maintainer: Juliette <hi@juliette.page>
 Author: Juliette <hi@juliette.page>
 Section: Tweaks
+Depiction: https://repo.juliette.page/depictions/chirp/other.html
+SileoDepiction: https://repo.juliette.page/depictions/chirp/sileo.json

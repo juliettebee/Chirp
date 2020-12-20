@@ -16,7 +16,6 @@
         widget = [[JulietteVolumeWidget alloc] initWithFrame:CGRectMake(xAxis, yAxis, (CGFloat)size, (CGFloat)size)];
         // Adding widget
         [[self view] addSubview:widget];
-
    }
 %end
 %end

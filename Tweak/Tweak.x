@@ -10,8 +10,18 @@
         // Getting position
         int xAxis;
         int yAxis;
-        [preferences registerInteger:&xAxis default:self.view.frame.origin.x forKey:@"JulietteWidgetLocationX"];
-        [preferences registerInteger:&yAxis default:0 forKey:@"JulietteWidgetLocationY"];
+        // Creating a default
+        // This is not perfect but its a good starting point to allow the user to set their own location
+        // It gets the center than adds 40 pixels to make sure its not in the same location of the slider
+        int defaultX;
+        int defaultY;
+        defaultX = self.view.subviews[0].center.x;
+        defaultY = self.sliderView.center.y;
+        defaultX = xAxis + 40;
+        defaultY = yAxis + 40;
+
+        [preferences registerInteger:&xAxis default:defaultX forKey:@"JulietteWidgetLocationX"];
+        [preferences registerInteger:&yAxis default:defaultY forKey:@"JulietteWidgetLocationY"];
         // Creating widget
         widget = [[JulietteVolumeWidget alloc] initWithFrame:CGRectMake(0, 0, (CGFloat)size, (CGFloat)size)];
         // Creating a parent view

@@ -4,6 +4,7 @@
 #import <Cephei/HBPreferences.h>
 
 @interface SBElasticVolumeViewController : UIViewController 
+@property (nonatomic,readonly) UIView * sliderView;
 @end
 
 @interface MRPlatterViewController : UIViewController

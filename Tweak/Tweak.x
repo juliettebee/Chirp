@@ -1,4 +1,4 @@
-#import "Tweak/Tweak.h"
+#import "Tweak.h"
 
 %group CCMusic 
 %hook SBElasticVolumeViewController // Volume slider 

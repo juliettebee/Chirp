@@ -52,6 +52,17 @@
     // Now lets tap it!
     [coolHiddenButton sendActionsForControlEvents: UIControlEventTouchUpInside];
 }
+-(void)toggleRepeat:(UISwipeGestureRecognizer*) gesture {
+    // Getting curent repeat state
+    MPMusicRepeatMode *state = MPMusicPlayerController.systemMusicPlayer.repeatMode;
+    // Seeing if it's repeating
+    if (state == MPMusicRepeatModeAll)
+        // Then disable repeating
+        MPMusicPlayerController.systemMusicPlayer.repeatMode = MPMusicRepeatModeNone;
+    else
+       // Enabling repeat
+       MPMusicPlayerController.systemMusicPlayer.repeatMode = MPMusicRepeatModeAll; 
+}
 - (void)songChangeNotification:(NSNotification *) notification {
     [self updateArtwork];
 }
@@ -105,6 +116,9 @@
             break;
         case 4:
             return @selector(showAirplay:);
+            break;
+        case 5:
+            return @selector(toggleRepeat:);
             break;
         default:
             return @selector(playSong:);

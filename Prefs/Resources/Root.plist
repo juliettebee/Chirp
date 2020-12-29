@@ -100,6 +100,26 @@
             <key>detail</key>
             <string>JulietteCCSettingsGesture</string>
         </dict>
+        <dict>
+            <key>cell</key>
+            <string>PSGroupCell</string>
+        </dict>
+        <dict>
+            <key>cellClass</key>
+            <string>HBTwitterCell</string>
+            <key>label</key>
+            <string>Juliette</string>
+            <key>user</key>
+            <string>juliettepod</string>
+        </dict>
+        <dict>
+            <key>cellClass</key>
+            <string>HBLinkTableCell</string>
+            <key>label</key>
+            <string>Source</string>
+            <key>url</key>
+            <string>https://github.com/justnaa/Chirp</string>
+        </dict>
 	</array>
 	<key>title</key>
 	<string>Volume</string>

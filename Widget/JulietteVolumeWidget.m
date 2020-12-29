@@ -24,7 +24,10 @@
         selector:@selector(songChangeNotification:) 
         name:@"MPMusicPlayerControllerNowPlayingItemDidChangeNotification"
         object:nil];
-
+        [[NSNotificationCenter defaultCenter] addObserver:self
+        selector:@selector(getPreferences:) 
+        name:@"page.juliette.Chirp/ReloadPrefs"
+        object:nil];
     }
     return self;
 } 

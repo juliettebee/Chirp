@@ -65,6 +65,8 @@
             <true/>
             <key>defaults</key>
 			<string>page.juliette.CCMusicSliderPrefs</string>
+            <key>PostNotification</key>
+            <string>page.juliette.Chirp/ReloadPrefs</string>
 		</dict>
         <dict>
             <key>cell</key>

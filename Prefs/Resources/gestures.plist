@@ -21,6 +21,8 @@
             <string>actionUp</string>
             <key>label</key>
             <string>Swipe up</string>
+            <key>PostNotification</key>
+            <string>page.juliette.Chirp/ReloadPrefs</string>
         </dict>
         <dict>
             <key>cell</key>
@@ -39,6 +41,8 @@
             <string>actionDown</string>
             <key>label</key>
             <string>Swipe down</string>
+            <key>PostNotification</key>
+            <string>page.juliette.Chirp/ReloadPrefs</string>
         </dict>
         <dict>
             <key>cell</key>
@@ -57,6 +61,8 @@
             <string>actionLeft</string>
             <key>label</key>
             <string>Swipe left</string>
+            <key>PostNotification</key>
+            <string>page.juliette.Chirp/ReloadPrefs</string>
         </dict>
         <dict>
             <key>cell</key>
@@ -75,6 +81,8 @@
             <string>actionRight</string>
             <key>label</key>
             <string>Swipe right</string>
+            <key>PostNotification</key>
+            <string>page.juliette.Chirp/ReloadPrefs</string>
         </dict>
 	</array>
 	<key>title</key>

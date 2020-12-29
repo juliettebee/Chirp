@@ -74,6 +74,17 @@
        // Enabling repeat
        MPMusicPlayerController.systemMusicPlayer.repeatMode = MPMusicRepeatModeOne; 
 }
+-(void)toggleShuffle:(UISwipeGestureRecognizer*) gesture {
+    MPMusicShuffleMode *state = MPMusicPlayerController.systemMusicPlayer.shuffleMode;
+    // Seeing if it's shuffling
+    // Using user default as you can shuffle albums or song and what user assigned should be best 
+    if (state == MPMusicShuffleModeDefault)
+        // Then disable shuffle 
+        MPMusicPlayerController.systemMusicPlayer.shuffleMode = MPMusicShuffleModeOff;
+    else
+       // Enabling shuffle 
+       MPMusicPlayerController.systemMusicPlayer.repeatMode = MPMusicShuffleModeDefault; 
+}
 - (void)songChangeNotification:(NSNotification *) notification {
     [self updateArtwork];
 }
@@ -133,6 +144,9 @@
             break;
         case 6:
             return @selector(toggleRepeatSong:);
+            break;
+        case 7:
+            return @selector(toggleShuffle:);
             break;
         default:
             return @selector(playSong:);

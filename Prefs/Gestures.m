@@ -10,7 +10,7 @@
             // To add another gesture or action just add some to the array
             // The gesture defaults are dependent on the index of action so make sure you append!
             NSArray *gesture = @[@"Up", @"Down", @"Left", @"Right" ]; 
-            NSArray *actions = @[@"Play", @"Pause", @"Next", @"Previous", @"Airplay", @"Repeat", @"Repeat song"];
+            NSArray *actions = @[@"Play", @"Pause", @"Next", @"Previous", @"Airplay", @"Repeat", @"Repeat song", @"Shuffle"];
             // Dictionary of defaults for latter!
             NSDictionary *gestureDefaults = @{
                 @"up": @1,

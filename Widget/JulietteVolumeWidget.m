@@ -63,6 +63,17 @@
        // Enabling repeat
        MPMusicPlayerController.systemMusicPlayer.repeatMode = MPMusicRepeatModeAll; 
 }
+-(void)toggleRepeatSong:(UISwipeGestureRecognizer*) gesture {
+    // Getting curent repeat state
+    MPMusicRepeatMode *state = MPMusicPlayerController.systemMusicPlayer.repeatMode;
+    // Seeing if it's repeating
+    if (state == MPMusicRepeatModeOne)
+        // Then disable repeating
+        MPMusicPlayerController.systemMusicPlayer.repeatMode = MPMusicRepeatModeNone;
+    else
+       // Enabling repeat
+       MPMusicPlayerController.systemMusicPlayer.repeatMode = MPMusicRepeatModeOne; 
+}
 - (void)songChangeNotification:(NSNotification *) notification {
     [self updateArtwork];
 }
@@ -119,6 +130,9 @@
             break;
         case 5:
             return @selector(toggleRepeat:);
+            break;
+        case 6:
+            return @selector(toggleRepeatSong:);
             break;
         default:
             return @selector(playSong:);

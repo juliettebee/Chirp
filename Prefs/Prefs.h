@@ -7,6 +7,8 @@
 @end
 
 @interface JulietteCCSettingsGesture : PSListController
+-(NSArray*)loadValues:(id)target; 
+-(NSArray*)loadTitles:(id)target; 
 @end
 
 @interface PSSpecifier : NSObject 

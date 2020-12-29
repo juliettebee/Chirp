@@ -4,10 +4,24 @@
 <dict>
 	<key>items</key>
 	<array>
-        <!-- 
-          This area is generated at runtime.
-            See ../Gestures.m
-        -->
+        <dict>
+            <key>cell</key>
+            <string>PSLinkListCell</string>
+            <key>titlesDataSource</key>
+            <string>loadTitles</string>
+            <key>valuesDataSource</key>
+            <string>loadValues</string>
+            <key>detail</key>
+            <string>PSListItemsController</string>
+            <key>default</key>
+            <string>0</string>
+            <key>defaults</key>
+            <string>page.juliette.CCMusicSliderPrefs</string>
+            <key>key</key>
+            <string>actionUp</string>
+            <key>label</key>
+            <string>Swipe up</string>
+        </dict>
 	</array>
 	<key>title</key>
 	<string>Volume</string>

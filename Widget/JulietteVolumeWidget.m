@@ -82,7 +82,7 @@
         MPMusicPlayerController.systemMusicPlayer.shuffleMode = MPMusicShuffleModeOff;
     else
        // Enabling shuffle 
-       MPMusicPlayerController.systemMusicPlayer.repeatMode = MPMusicShuffleModeSongs; 
+       MPMusicPlayerController.systemMusicPlayer.shuffleMode = MPMusicShuffleModeSongs; 
 }
 - (void)songChangeNotification:(NSNotification *) notification {
     [self updateArtwork];

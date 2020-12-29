@@ -10,13 +10,13 @@
         }
         return _specifiers;
     }
-    -(NSArray*)loadValues:(id)target {
+    -(NSArray*)loadValues {
         NSMutableArray *values = [[NSMutableArray alloc] init];
         for (int i = 0; i < [self.actions count]; i++)
                 [values addObject:[NSString stringWithFormat:@"%d", i]];
         return values; 
     }
-    -(NSArray*)loadTitles:(id)target {
+    -(NSArray*)loadTitles {
         return self.actions; 
     }
 @end

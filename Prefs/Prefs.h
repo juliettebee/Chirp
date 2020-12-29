@@ -7,6 +7,9 @@
 @end
 
 @interface JulietteCCSettingsGesture : PSListController
+@property (nonatomic, retain) NSArray *actions;
+-(NSArray*)loadValues; 
+-(NSArray*)loadTitles; 
 @end
 
 @interface PSSpecifier : NSObject 

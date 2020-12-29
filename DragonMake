@@ -1,6 +1,6 @@
 ---
 name: CCMusicSlider
-icmd: sbreload
+icmd: killall -9 SpringBoard 
 
 all:
   targetvers: 13.0

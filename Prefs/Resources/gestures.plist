@@ -4,6 +4,10 @@
 <dict>
 	<key>items</key>
 	<array>
+        <!-- 
+          This area is generated at runtime.
+            See ../Gestures.m
+        -->
 	</array>
 	<key>title</key>
 	<string>Volume</string>

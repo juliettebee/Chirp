@@ -20,7 +20,6 @@ CCMusicSliderTweak:
 CCMusicSliderPrefs:
     dir: Prefs
     type: prefs
-    frameworks: ['CoreFoundation', 'Foundation', 'UIKit', 'CoreGraphics', 'QuartzCore', 'CoreImage', 'AudioToolbox', 'Cephei', 'CepheiPrefs']
     objc_files:
         - "*.m"
         - "../Widget/*.m"

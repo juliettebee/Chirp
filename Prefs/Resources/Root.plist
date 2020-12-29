@@ -105,22 +105,22 @@
             <string>PSGroupCell</string>
         </dict>
         <dict>
-            <key>cellClass</key>
-            <string>HBTwitterCell</string>
+            <key>cell</key>
+            <string>PSButtonCell</string>
             <key>label</key>
-            <string>Juliette</string>
-            <key>user</key>
-            <string>juliettepod</string>
+            <string>Twitter</string>
+            <key>action</key>
+            <string>getTwitter</string> 
         </dict>
         <dict>
-            <key>cellClass</key>
-            <string>HBLinkTableCell</string>
+            <key>cell</key>
+            <string>PSButtonCell</string>
             <key>label</key>
             <string>Source</string>
-            <key>url</key>
-            <string>https://github.com/justnaa/Chirp</string>
-        </dict>
-	</array>
+            <key>action</key>
+            <string>getSource</string> 
+        </dict>	
+    </array>
 	<key>title</key>
 	<string>Volume</string>
 </dict>

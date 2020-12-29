@@ -2,6 +2,8 @@
 #import "JulietteCCPreview.h"
 
 @interface JulietteCCSettings : PSListController
+-(void)getTwitter;
+-(void)getSource;
 @end
 
 @interface JulietteCCSettingsGesture : PSListController

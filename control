@@ -1,7 +1,7 @@
 Package: page.juliette.Chirp 
 Name: Chirp 
-Depends: mobilesubstrate,  ws.hbang.common (>= 1.11)
-Version: 0.0.1
+Depends: mobilesubstrate, preferenceloader, ws.hbang.common (>= 1.11), firmware (>= 13.0)
+Version: 1.0.0
 Architecture: iphoneos-arm
 Description: Music player customization.
 Maintainer: Juliette <hi@juliette.page>

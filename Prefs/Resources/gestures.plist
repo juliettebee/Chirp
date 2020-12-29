@@ -22,6 +22,60 @@
             <key>label</key>
             <string>Swipe up</string>
         </dict>
+        <dict>
+            <key>cell</key>
+            <string>PSLinkListCell</string>
+            <key>titlesDataSource</key>
+            <string>loadTitles</string>
+            <key>valuesDataSource</key>
+            <string>loadValues</string>
+            <key>detail</key>
+            <string>PSListItemsController</string>
+            <key>default</key>
+            <string>1</string>
+            <key>defaults</key>
+            <string>page.juliette.CCMusicSliderPrefs</string>
+            <key>key</key>
+            <string>actionDown</string>
+            <key>label</key>
+            <string>Swipe down</string>
+        </dict>
+        <dict>
+            <key>cell</key>
+            <string>PSLinkListCell</string>
+            <key>titlesDataSource</key>
+            <string>loadTitles</string>
+            <key>valuesDataSource</key>
+            <string>loadValues</string>
+            <key>detail</key>
+            <string>PSListItemsController</string>
+            <key>default</key>
+            <string>3</string>
+            <key>defaults</key>
+            <string>page.juliette.CCMusicSliderPrefs</string>
+            <key>key</key>
+            <string>actionLeft</string>
+            <key>label</key>
+            <string>Swipe left</string>
+        </dict>
+        <dict>
+            <key>cell</key>
+            <string>PSLinkListCell</string>
+            <key>titlesDataSource</key>
+            <string>loadTitles</string>
+            <key>valuesDataSource</key>
+            <string>loadValues</string>
+            <key>detail</key>
+            <string>PSListItemsController</string>
+            <key>default</key>
+            <string>2</string>
+            <key>defaults</key>
+            <string>page.juliette.CCMusicSliderPrefs</string>
+            <key>key</key>
+            <string>actionRight</string>
+            <key>label</key>
+            <string>Swipe right</string>
+        </dict>
 	</array>
 	<key>title</key>
 	<string>Volume</string>

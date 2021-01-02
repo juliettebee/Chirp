@@ -10,14 +10,12 @@
         preferences = [[HBPreferences alloc] initWithIdentifier:@"page.juliette.CCMusicSliderPrefs"];
         // Getting album art
         MPMediaItemArtwork *art = MPMusicPlayerController.systemMusicPlayer.nowPlayingItem.artwork;
-        // Creating UIView with album art
-        // Have to use custom size as frame is being dumb smh
-        self.albumArt = [[UIImageView alloc] initWithImage:[art imageWithSize:frame.size]];
-        // Setting UIView's size
-        // Also here but with different vars
-        [self.albumArt setFrame:frame];
+        // Creating blank ui view 
+        self.albumArt = [[UIImageView alloc] initWithFrame:frame];
         // This is needed for radius
         self.layer.masksToBounds = TRUE;
+        // Setting the artwork's image
+        [self updateArtwork];
         // Getting prefs
         [self getPreferences];
         // Adding view
@@ -95,8 +93,16 @@
 }
 // Dedicated function to update artwork 
 -(void)updateArtwork {
-    MPMediaItemArtwork *art = MPMusicPlayerController.systemMusicPlayer.nowPlayingItem.artwork;
-    [self.albumArt setImage:[art imageWithSize:self.frame.size]];
+    // This is used as it allows us to get media artwork when user isnt using music.app
+    MRMediaRemoteGetNowPlayingInfo(dispatch_get_main_queue(), ^(CFDictionaryRef information) {
+        if (information) {
+            // Converting information from CFDictionaryRef to NSDictionary
+            NSDictionary* mediaInfo = (__bridge NSDictionary *)information;
+            if (mediaInfo)
+                // Then setting the album art
+                self.albumArt.image = [UIImage imageWithData:[mediaInfo objectForKey:(__bridge NSString*)kMRMediaRemoteNowPlayingInfoArtworkData]];
+        }
+    });
 }
 // Function to get prefs
 -(void)getPreferences {

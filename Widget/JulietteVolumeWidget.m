@@ -33,18 +33,18 @@
     return self;
 } 
 -(void)nextSong:(UISwipeGestureRecognizer*) gesture {
-    [MPMusicPlayerController.systemMusicPlayer skipToNextItem];
+    MRMediaRemoteSendCommand(4, 0);
     [self updateArtwork];
 }
 -(void)prevSong:(UISwipeGestureRecognizer*) gesture {
-    [MPMusicPlayerController.systemMusicPlayer skipToPreviousItem];
+    MRMediaRemoteSendCommand(5, 0);
     [self updateArtwork];
 }
 -(void)pauseSong:(UISwipeGestureRecognizer*) gesture {
-    [MPMusicPlayerController.systemMusicPlayer stop];
+    MRMediaRemoteSendCommand(1, 0);
 }
 -(void)playSong:(UISwipeGestureRecognizer*) gesture {
-    [MPMusicPlayerController.systemMusicPlayer play];
+    MRMediaRemoteSendCommand(0, 0);
 }
 -(void)showAirplay:(UISwipeGestureRecognizer*) gesture {
     // The picker only shows the logo :/
@@ -57,36 +57,10 @@
     [coolHiddenButton sendActionsForControlEvents: UIControlEventTouchUpInside];
 }
 -(void)toggleRepeat:(UISwipeGestureRecognizer*) gesture {
-    // Getting curent repeat state
-    MPMusicRepeatMode *state = MPMusicPlayerController.systemMusicPlayer.repeatMode;
-    // Seeing if it's repeating
-    if (state == MPMusicRepeatModeAll)
-        // Then disable repeating
-        MPMusicPlayerController.systemMusicPlayer.repeatMode = MPMusicRepeatModeNone;
-    else
-       // Enabling repeat
-       MPMusicPlayerController.systemMusicPlayer.repeatMode = MPMusicRepeatModeAll; 
-}
--(void)toggleRepeatSong:(UISwipeGestureRecognizer*) gesture {
-    // Getting curent repeat state
-    MPMusicRepeatMode *state = MPMusicPlayerController.systemMusicPlayer.repeatMode;
-    // Seeing if it's repeating
-    if (state == MPMusicRepeatModeOne)
-        // Then disable repeating
-        MPMusicPlayerController.systemMusicPlayer.repeatMode = MPMusicRepeatModeNone;
-    else
-       // Enabling repeat
-       MPMusicPlayerController.systemMusicPlayer.repeatMode = MPMusicRepeatModeOne; 
+    MRMediaRemoteSendCommand(7, 0);
 }
 -(void)toggleShuffle:(UISwipeGestureRecognizer*) gesture {
-    MPMusicShuffleMode *state = MPMusicPlayerController.systemMusicPlayer.shuffleMode;
-    // Seeing if it's shuffling
-    if (state == MPMusicShuffleModeSongs)
-        // Then disable shuffle 
-        MPMusicPlayerController.systemMusicPlayer.shuffleMode = MPMusicShuffleModeOff;
-    else
-       // Enabling shuffle 
-       MPMusicPlayerController.systemMusicPlayer.shuffleMode = MPMusicShuffleModeSongs; 
+    MRMediaRemoteSendCommand(6, 0);
 }
 - (void)songChangeNotification:(NSNotification *) notification {
     [self updateArtwork];
@@ -153,9 +127,6 @@
             return @selector(toggleRepeat:);
             break;
         case 6:
-            return @selector(toggleRepeatSong:);
-            break;
-        case 7:
             return @selector(toggleShuffle:);
             break;
         default:

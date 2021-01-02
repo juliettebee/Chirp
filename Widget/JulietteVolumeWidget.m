@@ -5,6 +5,9 @@
     self = [super initWithFrame:CGRectMake(0,0,frame.size.width, frame.size.height)];
     
      if (self) {
+        // Loading preferences
+        // We load it here as getPreferences() gets called multiple times 
+        preferences = [[HBPreferences alloc] initWithIdentifier:@"page.juliette.CCMusicSliderPrefs"];
         // Getting album art
         MPMediaItemArtwork *art = MPMusicPlayerController.systemMusicPlayer.nowPlayingItem.artwork;
         // Creating UIView with album art
@@ -97,7 +100,6 @@
 }
 // Function to get prefs
 -(void)getPreferences {
-    preferences = [[HBPreferences alloc] initWithIdentifier:@"page.juliette.CCMusicSliderPrefs"];
     
     // Registration
     [preferences registerInteger:&up default:1 forKey:@"actionUp"];

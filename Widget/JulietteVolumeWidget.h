@@ -2,6 +2,7 @@
 #import <Cephei/HBPreferences.h>
 #import <MediaPlayer/MediaPlayer.h>
 #import <AVKit/AVKit.h>
+#import <MediaRemote/MediaRemote.h>
 
 @interface JulietteVolumeWidget : UIView {
     HBPreferences *preferences;
@@ -17,7 +18,6 @@
 -(void)pauseSong:(UISwipeGestureRecognizer*) gesture; 
 -(void)playSong:(UISwipeGestureRecognizer*) gesture; 
 -(void)toggleRepeat:(UISwipeGestureRecognizer*) gesture;
--(void)toggleRepeatSong:(UISwipeGestureRecognizer*) gesture;
 -(void)toggleShuffle:(UISwipeGestureRecognizer*) gesture;
 -(void)songChangeNotification:(NSNotification *) notification; 
 -(void)updateArtwork; 

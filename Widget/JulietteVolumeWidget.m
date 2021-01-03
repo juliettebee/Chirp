@@ -5,16 +5,17 @@
     self = [super initWithFrame:CGRectMake(0,0,frame.size.width, frame.size.height)];
     
      if (self) {
+        // Loading preferences
+        // We load it here as getPreferences() gets called multiple times 
+        preferences = [[HBPreferences alloc] initWithIdentifier:@"page.juliette.CCMusicSliderPrefs"];
         // Getting album art
         MPMediaItemArtwork *art = MPMusicPlayerController.systemMusicPlayer.nowPlayingItem.artwork;
-        // Creating UIView with album art
-        // Have to use custom size as frame is being dumb smh
-        self.albumArt = [[UIImageView alloc] initWithImage:[art imageWithSize:frame.size]];
-        // Setting UIView's size
-        // Also here but with different vars
-        [self.albumArt setFrame:frame];
+        // Creating blank ui view 
+        self.albumArt = [[UIImageView alloc] initWithFrame:frame];
         // This is needed for radius
         self.layer.masksToBounds = TRUE;
+        // Setting the artwork's image
+        [self updateArtwork];
         // Getting prefs
         [self getPreferences];
         // Adding view
@@ -32,18 +33,18 @@
     return self;
 } 
 -(void)nextSong:(UISwipeGestureRecognizer*) gesture {
-    [MPMusicPlayerController.systemMusicPlayer skipToNextItem];
+    MRMediaRemoteSendCommand(MRMediaRemoteCommandNextTrack, 0);
     [self updateArtwork];
 }
 -(void)prevSong:(UISwipeGestureRecognizer*) gesture {
-    [MPMusicPlayerController.systemMusicPlayer skipToPreviousItem];
+    MRMediaRemoteSendCommand(MRMediaRemoteCommandPreviousTrack, 0);
     [self updateArtwork];
 }
 -(void)pauseSong:(UISwipeGestureRecognizer*) gesture {
-    [MPMusicPlayerController.systemMusicPlayer stop];
+    MRMediaRemoteSendCommand(MRMediaRemoteCommandPause, 0);
 }
 -(void)playSong:(UISwipeGestureRecognizer*) gesture {
-    [MPMusicPlayerController.systemMusicPlayer play];
+    MRMediaRemoteSendCommand(MRMediaRemoteCommandPlay, 0);
 }
 -(void)showAirplay:(UISwipeGestureRecognizer*) gesture {
     // The picker only shows the logo :/
@@ -56,48 +57,29 @@
     [coolHiddenButton sendActionsForControlEvents: UIControlEventTouchUpInside];
 }
 -(void)toggleRepeat:(UISwipeGestureRecognizer*) gesture {
-    // Getting curent repeat state
-    MPMusicRepeatMode *state = MPMusicPlayerController.systemMusicPlayer.repeatMode;
-    // Seeing if it's repeating
-    if (state == MPMusicRepeatModeAll)
-        // Then disable repeating
-        MPMusicPlayerController.systemMusicPlayer.repeatMode = MPMusicRepeatModeNone;
-    else
-       // Enabling repeat
-       MPMusicPlayerController.systemMusicPlayer.repeatMode = MPMusicRepeatModeAll; 
-}
--(void)toggleRepeatSong:(UISwipeGestureRecognizer*) gesture {
-    // Getting curent repeat state
-    MPMusicRepeatMode *state = MPMusicPlayerController.systemMusicPlayer.repeatMode;
-    // Seeing if it's repeating
-    if (state == MPMusicRepeatModeOne)
-        // Then disable repeating
-        MPMusicPlayerController.systemMusicPlayer.repeatMode = MPMusicRepeatModeNone;
-    else
-       // Enabling repeat
-       MPMusicPlayerController.systemMusicPlayer.repeatMode = MPMusicRepeatModeOne; 
+    MRMediaRemoteSendCommand(MRMediaRemoteCommandAdvanceRepeatMode, 0);
 }
 -(void)toggleShuffle:(UISwipeGestureRecognizer*) gesture {
-    MPMusicShuffleMode *state = MPMusicPlayerController.systemMusicPlayer.shuffleMode;
-    // Seeing if it's shuffling
-    if (state == MPMusicShuffleModeSongs)
-        // Then disable shuffle 
-        MPMusicPlayerController.systemMusicPlayer.shuffleMode = MPMusicShuffleModeOff;
-    else
-       // Enabling shuffle 
-       MPMusicPlayerController.systemMusicPlayer.shuffleMode = MPMusicShuffleModeSongs; 
+    MRMediaRemoteSendCommand(MRMediaRemoteCommandAdvanceShuffleMode, 0);
 }
-- (void)songChangeNotification:(NSNotification *) notification {
+-(void)songChangeNotification:(NSNotification *) notification {
     [self updateArtwork];
 }
 // Dedicated function to update artwork 
 -(void)updateArtwork {
-    MPMediaItemArtwork *art = MPMusicPlayerController.systemMusicPlayer.nowPlayingItem.artwork;
-    [self.albumArt setImage:[art imageWithSize:self.frame.size]];
+    // This is used as it allows us to get media artwork when user isnt using music.app
+    MRMediaRemoteGetNowPlayingInfo(dispatch_get_main_queue(), ^(CFDictionaryRef information) {
+        if (information) {
+            // Converting information from CFDictionaryRef to NSDictionary
+            NSDictionary* mediaInfo = (__bridge NSDictionary *)information;
+            if (mediaInfo)
+                // Then setting the album art
+                self.albumArt.image = [UIImage imageWithData:[mediaInfo objectForKey:(__bridge NSString*)kMRMediaRemoteNowPlayingInfoArtworkData]];
+        }
+    });
 }
 // Function to get prefs
 -(void)getPreferences {
-    preferences = [[HBPreferences alloc] initWithIdentifier:@"page.juliette.CCMusicSliderPrefs"];
     
     // Registration
     [preferences registerInteger:&up default:1 forKey:@"actionUp"];
@@ -145,9 +127,6 @@
             return @selector(toggleRepeat:);
             break;
         case 6:
-            return @selector(toggleRepeatSong:);
-            break;
-        case 7:
             return @selector(toggleShuffle:);
             break;
         default:

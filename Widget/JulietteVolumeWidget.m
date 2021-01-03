@@ -33,18 +33,18 @@
     return self;
 } 
 -(void)nextSong:(UISwipeGestureRecognizer*) gesture {
-    MRMediaRemoteSendCommand(4, 0);
+    MRMediaRemoteSendCommand(MRMediaRemoteCommandNextTrack, 0);
     [self updateArtwork];
 }
 -(void)prevSong:(UISwipeGestureRecognizer*) gesture {
-    MRMediaRemoteSendCommand(5, 0);
+    MRMediaRemoteSendCommand(MRMediaRemoteCommandPreviousTrack, 0);
     [self updateArtwork];
 }
 -(void)pauseSong:(UISwipeGestureRecognizer*) gesture {
-    MRMediaRemoteSendCommand(1, 0);
+    MRMediaRemoteSendCommand(MRMediaRemoteCommandPause, 0);
 }
 -(void)playSong:(UISwipeGestureRecognizer*) gesture {
-    MRMediaRemoteSendCommand(0, 0);
+    MRMediaRemoteSendCommand(MRMediaRemoteCommandPlay, 0);
 }
 -(void)showAirplay:(UISwipeGestureRecognizer*) gesture {
     // The picker only shows the logo :/
@@ -57,12 +57,12 @@
     [coolHiddenButton sendActionsForControlEvents: UIControlEventTouchUpInside];
 }
 -(void)toggleRepeat:(UISwipeGestureRecognizer*) gesture {
-    MRMediaRemoteSendCommand(7, 0);
+    MRMediaRemoteSendCommand(MRMediaRemoteCommandAdvanceRepeatMode, 0);
 }
 -(void)toggleShuffle:(UISwipeGestureRecognizer*) gesture {
-    MRMediaRemoteSendCommand(6, 0);
+    MRMediaRemoteSendCommand(MRMediaRemoteCommandAdvanceShuffleMode, 0);
 }
-- (void)songChangeNotification:(NSNotification *) notification {
+-(void)songChangeNotification:(NSNotification *) notification {
     [self updateArtwork];
 }
 // Dedicated function to update artwork 

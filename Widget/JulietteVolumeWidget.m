@@ -57,10 +57,36 @@
     [coolHiddenButton sendActionsForControlEvents: UIControlEventTouchUpInside];
 }
 -(void)toggleRepeat:(UISwipeGestureRecognizer*) gesture {
-    MRMediaRemoteSendCommand(MRMediaRemoteCommandAdvanceRepeatMode, 0);
+    // Getting curent repeat state
+    MPMusicRepeatMode *state = MPMusicPlayerController.systemMusicPlayer.repeatMode;
+    // Seeing if it's repeating
+    if (state == MPMusicRepeatModeAll)
+        // Then disable repeating
+        MPMusicPlayerController.systemMusicPlayer.repeatMode = MPMusicRepeatModeNone;
+    else
+       // Enabling repeat
+       MPMusicPlayerController.systemMusicPlayer.repeatMode = MPMusicRepeatModeAll;
+}
+-(void)toggleRepeatSong:(UISwipeGestureRecognizer*) gesture {
+    // Getting curent repeat state
+    MPMusicRepeatMode *state = MPMusicPlayerController.systemMusicPlayer.repeatMode;
+    // Seeing if it's repeating
+    if (state == MPMusicRepeatModeOne)
+        // Then disable repeating
+        MPMusicPlayerController.systemMusicPlayer.repeatMode = MPMusicRepeatModeNone;
+    else
+       // Enabling repeat
+       MPMusicPlayerController.systemMusicPlayer.repeatMode = MPMusicRepeatModeOne;
 }
 -(void)toggleShuffle:(UISwipeGestureRecognizer*) gesture {
-    MRMediaRemoteSendCommand(MRMediaRemoteCommandAdvanceShuffleMode, 0);
+    MPMusicShuffleMode *state = MPMusicPlayerController.systemMusicPlayer.shuffleMode;
+    // Seeing if it's shuffling
+    if (state == MPMusicShuffleModeSongs)
+        // Then disable shuffle
+        MPMusicPlayerController.systemMusicPlayer.shuffleMode = MPMusicShuffleModeOff;
+    else
+       // Enabling shuffle
+       MPMusicPlayerController.systemMusicPlayer.shuffleMode = MPMusicShuffleModeSongs;
 }
 -(void)songChangeNotification:(NSNotification *) notification {
     [self updateArtwork];
@@ -127,8 +153,10 @@
             return @selector(toggleRepeat:);
             break;
         case 6:
-            return @selector(toggleShuffle:);
+            return @selector(toggleRepeatSong:);
             break;
+        case 7:
+            return @selector(toggleShuffle:);
         default:
             return @selector(playSong:);
             break;

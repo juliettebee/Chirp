@@ -12,14 +12,15 @@ all:
 CCMusicSliderTweak:
     dir: Tweak
     type: tweak
-    logos_files:
-        - "*.x"
-    objc_files:
-        - "../Widget/*.m"
+    files:
+        - Tweak.x
+        - ../Widget/JulietteVolumeWidget.m
 
 CCMusicSliderPrefs:
     dir: Prefs
     type: prefs
-    objc_files:
-        - "*.m"
-        - "../Widget/*.m"
+    files:
+        - ../Widget/JulietteVolumeWidget.m
+        - Gestures.m
+        - JulietteCCPreview.m
+        - Prefs.m

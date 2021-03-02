@@ -4,7 +4,7 @@
     - (NSArray *)specifiers {
         if (!_specifiers) { 
             // Setting actions
-            self.actions = @[@"Play", @"Pause", @"Next", @"Previous", @"Airplay", @"Repeat", @"Repeat song", @"Shuffle"];
+            self.actions = @[@"Play", @"Pause", @"Next", @"Previous", @"Airplay", @"Repeat", @"Repeat song", @"Shuffle", @"Toggle Playback"];
             // Loading the specifiers so we get the title
             _specifiers = [self loadSpecifiersFromPlistName:@"gestures" target:self];
         }

@@ -20,6 +20,7 @@
 -(void)toggleRepeat:(UISwipeGestureRecognizer*) gesture;
 -(void)toggleShuffle:(UISwipeGestureRecognizer*) gesture;
 -(void)toggleRepeatSong:(UISwipeGestureRecognizer*) gesture;
+-(void)togglePlayback:(UISwipeGestureRecognizer*) gesture;
 -(void)songChangeNotification:(NSNotification *) notification; 
 -(void)updateArtwork; 
 -(void)getPreferences; 

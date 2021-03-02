@@ -88,6 +88,11 @@
        // Enabling shuffle
        MPMusicPlayerController.systemMusicPlayer.shuffleMode = MPMusicShuffleModeSongs;
 }
+
+-(void)togglePlayback:(UISwipeGestureRecognizer*) gesture {
+    MRMediaRemoteSendCommand(2, 0);
+}
+
 -(void)songChangeNotification:(NSNotification *) notification {
     [self updateArtwork];
 }
@@ -157,6 +162,8 @@
             break;
         case 7:
             return @selector(toggleShuffle:);
+        case 8:
+            return @selector(togglePlayback:);
         default:
             return @selector(playSong:);
             break;

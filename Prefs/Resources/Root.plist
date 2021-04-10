@@ -4,25 +4,17 @@
 <dict>
 	<key>items</key>
 	<array>
+        <dict>
+            <key>cellClass</key>
+            <string>HBTwitterCell</string>
+            <key>label</key>
+            <string>Juliette</string>
+            <key>user</key>
+            <string>JuliettePod</string>
+            <key>iconURL</key>
+            <string>https://juliette.page/avatar</string>
+        </dict>
 		<dict>
-			<key>cellClass</key>
-			<string>JulietteCCPreview</string>
-			<key>height</key>
-			<string>100</string>
-		</dict>
-        <dict>
-			<key>cell</key>
-			<string>PSSwitchCell</string>
-			<key>default</key>
-			<true/>
-			<key>defaults</key>
-			<string>page.juliette.CCMusicSliderPrefs</string>
-			<key>key</key>
-            <string>JulietteWidgetEnabled</string>
-			<key>label</key>
-			<string>Enabled</string>
-		</dict>
-        <dict>
             <key>cell</key>
             <string>PSGroupCell</string>
             <key>label</key>
@@ -72,7 +64,7 @@
             <key>cell</key>
             <string>PSGroupCell</string>
             <key>label</key>
-            <string>Location, leave blank for default</string>
+            <string>Location</string>
         </dict>
         <dict>
             <key>cell</key>
@@ -107,23 +99,21 @@
             <string>PSGroupCell</string>
         </dict>
         <dict>
-            <key>cell</key>
-            <string>PSButtonCell</string>
-            <key>label</key>
-            <string>Twitter</string>
-            <key>action</key>
-            <string>getTwitter</string> 
-        </dict>
+			<key>cellClass</key>
+			<string>HBLinkTableCell</string>
+			<key>label</key>
+			<string>Source</string>
+			<key>url</key>
+            <string>https://github.com/justnaa/Chirp</string>
+        </dict>	
         <dict>
             <key>cell</key>
-            <string>PSButtonCell</string>
-            <key>label</key>
-            <string>Source</string>
-            <key>action</key>
-            <string>getSource</string> 
-        </dict>	
+            <string>PSGroupCell</string>
+            <key>footerText</key>
+            <string>Chirp, a tweak made by Juliette</string>
+        </dict>
     </array>
 	<key>title</key>
-	<string>Volume</string>
+	<string>Chirp</string>
 </dict>
 </plist>

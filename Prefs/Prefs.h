@@ -1,9 +1,13 @@
 #import <Preferences/PSListController.h>
 #import "JulietteCCPreview.h"
+#import <Cephei/HBPreferences.h>	
+#import <Cephei/HBRespringController.h>
+#import <CepheiPrefs/HBRootListController.h>
+#import <CepheiPrefs/HBAppearanceSettings.h>
 
-@interface JulietteCCSettings : PSListController
--(void)getTwitter;
--(void)getSource;
+@interface JulietteCCSettings : HBRootListController 
+@property (retain, nonatomic) UIView *header;
+-(void)tweakStatus:(id)sender;
 @end
 
 @interface JulietteCCSettingsGesture : PSListController
@@ -20,3 +24,9 @@
 -(void)setProperty:(id)arg1 forKey:(id)arg2 ;
 -(void)setIdentifier:(NSString *)arg1 ;
 @end
+
+@interface JAnimatedGradientBackground : UIView 
+@property (retain, nonatomic) CAGradientLayer *gradient;
+@end
+
+HBPreferences *preferences;
